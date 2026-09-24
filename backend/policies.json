@@ -1,0 +1,27 @@
+[
+    {"role": "ADMIN", "resource": "/admin*", "action": "*", "decision": "ALLOW"},
+    {"role": "ADMIN", "resource": "/*", "action": "*", "decision": "ALLOW"},
+    
+    {"role": "HR_MANAGER", "resource": "/hr*", "action": "*", "decision": "ALLOW"},
+    {"role": "HR_MANAGER", "resource": "/employee*", "action": "GET", "decision": "ALLOW"},
+    {"role": "HR_MANAGER", "resource": "/finance*", "action": "*", "decision": "DENY"},
+    {"role": "HR_MANAGER", "resource": "/admin*", "action": "*", "decision": "DENY"},
+    
+    {"role": "FINANCE_MANAGER", "resource": "/finance*", "action": "*", "decision": "ALLOW"},
+    {"role": "FINANCE_MANAGER", "resource": "/employee*", "action": "GET", "decision": "ALLOW"},
+    {"role": "FINANCE_MANAGER", "resource": "/hr*", "action": "*", "decision": "DENY"},
+    {"role": "FINANCE_MANAGER", "resource": "/admin*", "action": "*", "decision": "DENY"},
+    
+    {"role": "SECURITY_ANALYST", "resource": "/audit*", "action": "GET", "decision": "ALLOW"},
+    {"role": "SECURITY_ANALYST", "resource": "/employee*", "action": "GET", "decision": "ALLOW"},
+    {"role": "SECURITY_ANALYST", "resource": "/*", "action": "POST", "decision": "DENY"},
+    {"role": "SECURITY_ANALYST", "resource": "/*", "action": "PUT", "decision": "DENY"},
+    {"role": "SECURITY_ANALYST", "resource": "/*", "action": "DELETE", "decision": "DENY"},
+    
+    {"role": "EMPLOYEE", "resource": "/employee*", "action": "*", "decision": "ALLOW"},
+    {"role": "EMPLOYEE", "resource": "/hr*", "action": "*", "decision": "DENY"},
+    {"role": "EMPLOYEE", "resource": "/finance*", "action": "*", "decision": "DENY"},
+    {"role": "EMPLOYEE", "resource": "/admin*", "action": "*", "decision": "DENY"},
+    
+    {"role": "GUEST", "resource": "/*", "action": "*", "decision": "DENY"}
+]
